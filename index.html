@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>David Bocaranda — WordPress Dev & SEO Specialist</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -11,7 +12,6 @@
 </head>
 <body>
 
-  <!-- CURSOR -->
   <div class="cursor" id="cursor"></div>
   <div class="cursor-follower" id="cursor-follower"></div>
 
@@ -19,25 +19,29 @@
   <nav class="nav" id="nav">
     <div class="nav-logo">DB<span class="dot">.</span></div>
     <ul class="nav-links">
-      <li><a href="#about">Sobre mí</a></li>
-      <li><a href="#services">Servicios</a></li>
-      <li><a href="#process">Proceso</a></li>
-      <li><a href="#projects">Proyectos</a></li>
-      <li><a href="#contact" class="nav-cta">Contactar</a></li>
+      <li><a href="#about" data-i18n="nav.about">Sobre mí</a></li>
+      <li><a href="#services" data-i18n="nav.services">Servicios</a></li>
+      <li><a href="#process" data-i18n="nav.process">Proceso</a></li>
+      <li><a href="#projects" data-i18n="nav.projects">Proyectos</a></li>
+      <li><button class="lang-toggle" id="lang-toggle">EN</button></li>
+      <li><a href="#contact" class="nav-cta" data-i18n="nav.contact">Contactar</a></li>
     </ul>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="nav-right-mobile">
+      <button class="lang-toggle" id="lang-toggle-mobile">EN</button>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </nav>
 
   <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobile-menu">
     <ul>
-      <li><a href="#about" onclick="closeMobile()">Sobre mí</a></li>
-      <li><a href="#services" onclick="closeMobile()">Servicios</a></li>
-      <li><a href="#process" onclick="closeMobile()">Proceso</a></li>
-      <li><a href="#projects" onclick="closeMobile()">Proyectos</a></li>
-      <li><a href="#contact" onclick="closeMobile()">Contactar</a></li>
+      <li><a href="#about" data-i18n="nav.about" onclick="closeMobile()">Sobre mí</a></li>
+      <li><a href="#services" data-i18n="nav.services" onclick="closeMobile()">Servicios</a></li>
+      <li><a href="#process" data-i18n="nav.process" onclick="closeMobile()">Proceso</a></li>
+      <li><a href="#projects" data-i18n="nav.projects" onclick="closeMobile()">Proyectos</a></li>
+      <li><a href="#contact" data-i18n="nav.contact" onclick="closeMobile()">Contactar</a></li>
     </ul>
   </div>
 
@@ -48,7 +52,7 @@
     <div class="hero-content">
       <div class="hero-badge reveal">
         <span class="badge-dot"></span>
-        Disponible para proyectos
+        <span data-i18n="hero.badge">Disponible para proyectos</span>
       </div>
       <h1 class="hero-title reveal">
         <span class="hero-name">David</span>
@@ -60,39 +64,40 @@
         <span class="role-tag accent">SEO Specialist</span>
       </div>
       <p class="hero-desc reveal">
-        Creo sitios web profesionales que <em>ranquean en Google</em> y convierten visitantes en clientes. WordPress, Wix, Shopify — con estrategias SEO que generan tráfico orgánico real.
+        <span data-i18n="hero.desc1">Creo sitios web profesionales que </span><em data-i18n="hero.desc2">ranquean en Google</em><span data-i18n="hero.desc3"> y convierten visitantes en clientes. WordPress, Wix, Shopify — con estrategias SEO que generan tráfico orgánico real.</span>
       </p>
       <div class="hero-actions reveal">
-        <a href="#projects" class="btn-primary">Ver Proyectos</a>
-        <a href="#contact" class="btn-ghost">Hablemos →</a>
+        <a href="#projects" class="btn-primary" data-i18n="hero.cta1">Ver Proyectos</a>
+        <a href="#contact" class="btn-ghost" data-i18n="hero.cta2">Hablemos →</a>
       </div>
       <div class="hero-stats reveal">
         <div class="stat">
           <span class="stat-num" data-count="10">0</span><span class="stat-plus">+</span>
-          <span class="stat-label">Proyectos</span>
+          <span class="stat-label" data-i18n="hero.stat1">Proyectos</span>
         </div>
         <div class="stat-divider"></div>
         <div class="stat">
           <span class="stat-num" data-count="3">0</span><span class="stat-plus">+</span>
-          <span class="stat-label">Años de experiencia</span>
+          <span class="stat-label" data-i18n="hero.stat2">Años exp.</span>
         </div>
         <div class="stat-divider"></div>
         <div class="stat">
-          <span class="stat-num" data-count="4">0</span><span class="stat-plus"></span>
-          <span class="stat-label">Plataformas</span>
+          <span class="stat-num" data-count="4">0</span>
+          <span class="stat-label" data-i18n="hero.stat3">Plataformas</span>
         </div>
       </div>
     </div>
+
     <div class="hero-visual reveal">
       <div class="hero-card">
-        <div class="card-label">Stack Principal</div>
+        <div class="card-label" data-i18n="hero.stack">Stack Principal</div>
         <div class="tool-grid">
           <div class="tool-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
             <span>WordPress</span>
           </div>
           <div class="tool-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 3a4.5 4.5 0 0 1 0 9 4.5 4.5 0 0 1 0 9"/><path d="M3 12h18"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
             <span>SEMrush</span>
           </div>
           <div class="tool-item">
@@ -119,12 +124,12 @@
   <!-- ABOUT -->
   <section class="about" id="about">
     <div class="container">
-      <div class="section-label reveal">Sobre mí</div>
+      <div class="section-label reveal" data-i18n="about.label">Sobre mí</div>
       <div class="about-grid">
         <div class="about-left reveal">
           <h2 class="section-title">WordPress Dev<br/><span class="accent-text">& SEO Specialist</span></h2>
-          <p>Especialista en crear sitios web profesionales con WordPress, Wix y Shopify. Aplico técnicas de SEO on-page y off-page comprobadas para posicionar sitios en Google y atraer tráfico orgánico real.</p>
-          <p>Desde 2022 he trabajado en agencias y de forma independiente, ayudando a negocios a crecer en el mundo digital mediante estrategias integrales de desarrollo web y posicionamiento.</p>
+          <p data-i18n="about.p1">Especialista en crear sitios web profesionales con WordPress, Wix y Shopify. Aplico técnicas de SEO on-page y off-page comprobadas para posicionar sitios en Google y atraer tráfico orgánico real.</p>
+          <p data-i18n="about.p2">Desde 2022 he trabajado en agencias y de forma independiente, ayudando a negocios a crecer en el mundo digital mediante estrategias integrales de desarrollo web y posicionamiento.</p>
           <div class="experience-timeline">
             <div class="timeline-item">
               <div class="timeline-dot"></div>
@@ -132,23 +137,23 @@
                 <div class="timeline-year">2022 — 2024</div>
                 <div class="timeline-role">SEO Specialist & Web Developer</div>
                 <div class="timeline-company">Radar Web Agency</div>
-                <p>Gestión de estrategias SEO: link building, optimización de Google My Business y SEO on/off-page. Diseño web para clientes.</p>
+                <p data-i18n="about.role1desc">Gestión de estrategias SEO: link building, optimización de Google My Business y SEO on/off-page. Diseño web para clientes.</p>
               </div>
             </div>
             <div class="timeline-item">
               <div class="timeline-dot active"></div>
               <div class="timeline-content">
-                <div class="timeline-year">2024 — Presente</div>
+                <div class="timeline-year">2024 — <span data-i18n="about.present">Presente</span></div>
                 <div class="timeline-role">Freelance SEO Specialist & Web Designer</div>
-                <div class="timeline-company">Independiente</div>
-                <p>Ayudo a negocios a mejorar su visibilidad online con SEO efectivo y sitios WordPress a medida que aumentan el tráfico y conversiones.</p>
+                <div class="timeline-company" data-i18n="about.independent">Independiente</div>
+                <p data-i18n="about.role2desc">Ayudo a negocios a mejorar su visibilidad online con SEO efectivo y sitios WordPress a medida que aumentan el tráfico y conversiones.</p>
               </div>
             </div>
           </div>
         </div>
         <div class="about-right reveal">
           <div class="skills-card">
-            <h3>Especialidades</h3>
+            <h3 data-i18n="about.skillsTitle">Especialidades</h3>
             <div class="skill-bar-list">
               <div class="skill-bar-item">
                 <div class="skill-bar-header"><span>WordPress Development</span><span>95%</span></div>
@@ -184,52 +189,36 @@
   <!-- SERVICES -->
   <section class="services" id="services">
     <div class="container">
-      <div class="section-label reveal">Servicios</div>
-      <h2 class="section-title reveal">Lo que <span class="accent-text">ofrezco</span></h2>
+      <div class="section-label reveal" data-i18n="services.label">Servicios</div>
+      <h2 class="section-title reveal"><span data-i18n="services.titleFull">Lo que <span class="accent-text">ofrezco</span></span></h2>
       <div class="services-grid">
         <div class="service-card reveal">
           <div class="service-num">01</div>
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-          </div>
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
           <h3>WordPress Dev</h3>
-          <p>Sitios web profesionales, rápidos y escalables. Diseño personalizado con Elementor, plugins optimizados y código limpio.</p>
-          <div class="service-tags">
-            <span>Elementor</span><span>WooCommerce</span><span>Custom Themes</span>
-          </div>
+          <p data-i18n="services.s1desc">Sitios web profesionales, rápidos y escalables. Diseño personalizado con Elementor, plugins optimizados y código limpio.</p>
+          <div class="service-tags"><span>Elementor</span><span>WooCommerce</span><span>Custom Themes</span></div>
         </div>
         <div class="service-card reveal">
           <div class="service-num">02</div>
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-          </div>
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div>
           <h3>SEO Optimization</h3>
-          <p>Estrategias completas de posicionamiento orgánico. Keyword research, auditorías técnicas, link building y optimización de contenido.</p>
-          <div class="service-tags">
-            <span>On-Page</span><span>Off-Page</span><span>SEMrush</span>
-          </div>
+          <p data-i18n="services.s2desc">Estrategias completas de posicionamiento orgánico. Keyword research, auditorías técnicas, link building y optimización de contenido.</p>
+          <div class="service-tags"><span>On-Page</span><span>Off-Page</span><span>SEMrush</span></div>
         </div>
         <div class="service-card reveal">
           <div class="service-num">03</div>
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-          </div>
-          <h3>Online Store</h3>
-          <p>Tiendas online con WooCommerce y Shopify. Catálogos, pasarelas de pago, gestión de inventario y experiencia de usuario optimizada.</p>
-          <div class="service-tags">
-            <span>Shopify</span><span>WooCommerce</span><span>Wix</span>
-          </div>
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
+          <h3 data-i18n="services.s3title">Online Store</h3>
+          <p data-i18n="services.s3desc">Tiendas online con WooCommerce y Shopify. Catálogos, pasarelas de pago, gestión de inventario y experiencia de usuario optimizada.</p>
+          <div class="service-tags"><span>Shopify</span><span>WooCommerce</span><span>Wix</span></div>
         </div>
         <div class="service-card reveal">
           <div class="service-num">04</div>
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-          </div>
-          <h3>Soporte & Mantenimiento</h3>
-          <p>Mantenimiento continuo de tu sitio web, actualizaciones, backups y soporte técnico para que tu negocio nunca se detenga.</p>
-          <div class="service-tags">
-            <span>Updates</span><span>Backups</span><span>Security</span>
-          </div>
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <h3 data-i18n="services.s4title">Soporte & Mantenimiento</h3>
+          <p data-i18n="services.s4desc">Mantenimiento continuo, actualizaciones, backups y soporte técnico para que tu negocio nunca se detenga.</p>
+          <div class="service-tags"><span>Updates</span><span>Backups</span><span>Security</span></div>
         </div>
       </div>
     </div>
@@ -238,38 +227,38 @@
   <!-- PROCESS -->
   <section class="process" id="process">
     <div class="container">
-      <div class="section-label reveal">Proceso</div>
-      <h2 class="section-title reveal">Cómo <span class="accent-text">trabajo</span></h2>
+      <div class="section-label reveal" data-i18n="process.label">Proceso</div>
+      <h2 class="section-title reveal"><span data-i18n="process.titleFull">Cómo <span class="accent-text">trabajo</span></span></h2>
       <div class="process-steps">
         <div class="process-step reveal">
           <div class="step-number">01</div>
           <div class="step-content">
-            <h3>Investigación & Estrategia</h3>
-            <p>Keyword research profundo, auditorías técnicas y análisis de competencia. Defino objetivos claros y estrategias SEO on-page y off-page.</p>
+            <h3 data-i18n="process.step1title">Investigación & Estrategia</h3>
+            <p data-i18n="process.step1desc">Keyword research, auditorías técnicas y análisis de competencia. Defino objetivos y estrategias SEO claras.</p>
           </div>
           <div class="step-arrow">→</div>
         </div>
         <div class="process-step reveal">
           <div class="step-number">02</div>
           <div class="step-content">
-            <h3>Diseño & Desarrollo</h3>
-            <p>Construyo el sitio en WordPress, Wix o Shopify implementando buenas prácticas SEO desde el inicio. Diseño responsive y optimizado.</p>
+            <h3 data-i18n="process.step2title">Diseño & Desarrollo</h3>
+            <p data-i18n="process.step2desc">Construyo el sitio implementando buenas prácticas SEO desde el inicio. Diseño responsive y optimizado.</p>
           </div>
           <div class="step-arrow">→</div>
         </div>
         <div class="process-step reveal">
           <div class="step-number">03</div>
           <div class="step-content">
-            <h3>Testing & Optimización</h3>
-            <p>Pruebas de velocidad, accesibilidad y compatibilidad móvil. Ajustes de contenido y estructura para máxima experiencia de usuario.</p>
+            <h3 data-i18n="process.step3title">Testing & Optimización</h3>
+            <p data-i18n="process.step3desc">Pruebas de velocidad, accesibilidad y compatibilidad móvil. Ajustes para máxima experiencia de usuario.</p>
           </div>
           <div class="step-arrow">→</div>
         </div>
         <div class="process-step reveal">
           <div class="step-number">04</div>
           <div class="step-content">
-            <h3>Monitoreo & Crecimiento</h3>
-            <p>Google Analytics y Search Console para monitorear el rendimiento. Ajustes basados en datos para maximizar el tráfico orgánico.</p>
+            <h3 data-i18n="process.step4title">Monitoreo & Crecimiento</h3>
+            <p data-i18n="process.step4desc">Analytics y Search Console para monitorear rendimiento y maximizar el tráfico orgánico.</p>
           </div>
           <div class="step-arrow last">✓</div>
         </div>
@@ -280,166 +269,155 @@
   <!-- PROJECTS -->
   <section class="projects" id="projects">
     <div class="container">
-      <div class="section-label reveal">Proyectos</div>
-      <h2 class="section-title reveal">Últimos <span class="accent-text">trabajos</span></h2>
-
+      <div class="section-label reveal" data-i18n="projects.label">Proyectos</div>
+      <h2 class="section-title reveal"><span data-i18n="projects.titleFull">Últimos <span class="accent-text">trabajos</span></span></h2>
       <div class="project-filter reveal">
-        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn active" data-filter="all" data-i18n="filter.all">Todos</button>
         <button class="filter-btn" data-filter="wordpress">WordPress</button>
-        <button class="filter-btn" data-filter="shopify">Shopify / Wix</button>
+        <button class="filter-btn" data-filter="shopify">Shopify</button>
+        <button class="filter-btn" data-filter="wix">Wix</button>
       </div>
-
       <div class="projects-grid">
 
+        <!-- WORDPRESS -->
         <div class="project-card reveal" data-category="wordpress">
           <div class="project-img-wrap">
-            <div class="project-placeholder">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-            </div>
-            <div class="project-overlay">
-              <a href="https://verdenlandscapingcompany.com" target="_blank" class="project-link">Visitar →</a>
-            </div>
+            <img class="project-thumb" src="https://image.thum.io/get/width/600/crop/380/noanimate/https://verdenlandscapingcompany.com" alt="Verden Landscaping" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+            <div class="project-placeholder" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+            <div class="project-overlay"><a href="https://verdenlandscapingcompany.com" target="_blank" class="project-link" data-i18n="projects.visit">Visitar →</a></div>
           </div>
           <div class="project-info">
             <div class="project-cat">WordPress · Landscaping</div>
             <h3>Verden Landscaping</h3>
-            <p>Sitio web para empresa de paisajismo con diseño visual impactante, SEO local y formulario de contacto optimizado.</p>
+            <p data-i18n="proj.verden">Sitio web para empresa de paisajismo con diseño visual impactante, SEO local y formulario de contacto optimizado.</p>
             <a href="https://verdenlandscapingcompany.com" target="_blank" class="project-url">verdenlandscapingcompany.com ↗</a>
           </div>
         </div>
 
         <div class="project-card reveal" data-category="wordpress">
           <div class="project-img-wrap">
-            <div class="project-placeholder">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-            </div>
-            <div class="project-overlay">
-              <a href="https://detroitfencecompany.us" target="_blank" class="project-link">Visitar →</a>
-            </div>
+            <img class="project-thumb" src="https://image.thum.io/get/width/600/crop/380/noanimate/https://detroitfencecompany.us" alt="Detroit Fence Company" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+            <div class="project-placeholder" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+            <div class="project-overlay"><a href="https://detroitfencecompany.us" target="_blank" class="project-link" data-i18n="projects.visit">Visitar →</a></div>
           </div>
           <div class="project-info">
             <div class="project-cat">WordPress · Construction</div>
             <h3>Detroit Fence Company</h3>
-            <p>Web para empresa de construcción de cercas en Detroit. SEO local enfocado en atraer clientes residenciales y comerciales.</p>
+            <p data-i18n="proj.detroit">Web para empresa de cercas en Detroit. SEO local para atraer clientes residenciales y comerciales.</p>
             <a href="https://detroitfencecompany.us" target="_blank" class="project-url">detroitfencecompany.us ↗</a>
           </div>
         </div>
 
         <div class="project-card reveal" data-category="wordpress">
           <div class="project-img-wrap">
-            <div class="project-placeholder">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-            </div>
-            <div class="project-overlay">
-              <a href="https://navetsa.com" target="_blank" class="project-link">Visitar →</a>
-            </div>
+            <img class="project-thumb" src="https://image.thum.io/get/width/600/crop/380/noanimate/https://navetsa.com" alt="Navet SA" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+            <div class="project-placeholder" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+            <div class="project-overlay"><a href="https://navetsa.com" target="_blank" class="project-link" data-i18n="projects.visit">Visitar →</a></div>
           </div>
           <div class="project-info">
             <div class="project-cat">WordPress · B2B / Importadora</div>
             <h3>Navet S.A.</h3>
-            <p>Sitio para importadora-distribuidora de productos y accesorios para animales. Catálogo B2B con estructura SEO sólida.</p>
+            <p data-i18n="proj.navet">Importadora-distribuidora de productos para animales. Catálogo B2B con estructura SEO sólida.</p>
             <a href="https://navetsa.com" target="_blank" class="project-url">navetsa.com ↗</a>
           </div>
         </div>
 
         <div class="project-card reveal" data-category="wordpress">
           <div class="project-img-wrap">
-            <div class="project-placeholder">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-            </div>
-            <div class="project-overlay">
-              <a href="https://colibriwoodsempresas.com" target="_blank" class="project-link">Visitar →</a>
-            </div>
+            <img class="project-thumb" src="https://image.thum.io/get/width/600/crop/380/noanimate/https://colibriwoodsempresas.com" alt="Colibri Woods" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+            <div class="project-placeholder" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+            <div class="project-overlay"><a href="https://colibriwoodsempresas.com" target="_blank" class="project-link" data-i18n="projects.visit">Visitar →</a></div>
           </div>
           <div class="project-info">
             <div class="project-cat">WordPress · E-commerce / Madera</div>
             <h3>Colibri Woods Empresas</h3>
-            <p>Empresa de productos de madera premium. Diseño elegante que refleja la calidad artesanal con WooCommerce integrado.</p>
+            <p data-i18n="proj.colibri">Empresa de productos de madera premium. Diseño elegante con WooCommerce integrado.</p>
             <a href="https://colibriwoodsempresas.com" target="_blank" class="project-url">colibriwoodsempresas.com ↗</a>
           </div>
         </div>
 
+        <div class="project-card reveal" data-category="wordpress">
+          <div class="project-img-wrap">
+            <img class="project-thumb" src="https://image.thum.io/get/width/600/crop/380/noanimate/https://aionexp.com" alt="Aion Experience" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+            <div class="project-placeholder" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+            <div class="project-overlay"><a href="https://aionexp.com" target="_blank" class="project-link" data-i18n="projects.visit">Visitar →</a></div>
+          </div>
+          <div class="project-info">
+            <div class="project-cat">WordPress · Entretenimiento</div>
+            <h3>Aion Experience</h3>
+            <p data-i18n="proj.aion">Shows de drones en el Caribe. Sitio impactante orientado a conversión para cotizar espectáculos.</p>
+            <a href="https://aionexp.com" target="_blank" class="project-url">aionexp.com ↗</a>
+          </div>
+        </div>
+
+        <!-- SHOPIFY -->
         <div class="project-card reveal" data-category="shopify">
           <div class="project-img-wrap">
-            <div class="project-placeholder">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-            </div>
-            <div class="project-overlay">
-              <a href="https://www.spicedupusa.com" target="_blank" class="project-link">Visitar →</a>
-            </div>
+            <img class="project-thumb" src="https://image.thum.io/get/width/600/crop/380/noanimate/https://www.spicedupusa.com" alt="Spiced Up USA" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+            <div class="project-placeholder" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+            <div class="project-overlay"><a href="https://www.spicedupusa.com" target="_blank" class="project-link" data-i18n="projects.visit">Visitar →</a></div>
           </div>
           <div class="project-info">
             <div class="project-cat">Shopify · Food & Beverages</div>
             <h3>Spiced Up USA</h3>
-            <p>Tienda Shopify de especias y condimentos. E-commerce completo con catálogo, pasarela de pagos y diseño llamativo.</p>
+            <p data-i18n="proj.spicedup">Tienda Shopify de especias y condimentos. E-commerce completo con catálogo y pasarela de pagos.</p>
             <a href="https://www.spicedupusa.com" target="_blank" class="project-url">spicedupusa.com ↗</a>
           </div>
         </div>
 
         <div class="project-card reveal" data-category="shopify">
           <div class="project-img-wrap">
-            <div class="project-placeholder">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-            </div>
-            <div class="project-overlay">
-              <a href="https://cursos.agenciawebradar.com" target="_blank" class="project-link">Visitar →</a>
-            </div>
+            <img class="project-thumb" src="https://image.thum.io/get/width/600/crop/380/noanimate/https://cursos.agenciawebradar.com" alt="Agencia Web Radar Cursos" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+            <div class="project-placeholder" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+            <div class="project-overlay"><a href="https://cursos.agenciawebradar.com" target="_blank" class="project-link" data-i18n="projects.visit">Visitar →</a></div>
           </div>
           <div class="project-info">
-            <div class="project-cat">Shopidy · Educación / Webinars</div>
+            <div class="project-cat">Shopify · Educación</div>
             <h3>Agencia Web Radar — Cursos</h3>
-            <p>Plataforma de cursos online con sistema de inscripción, clases en línea y consultoría. Diseño moderno y funcional.</p>
+            <p data-i18n="proj.cursos">Plataforma de cursos online con inscripción, clases en línea y consultoría integrada.</p>
             <a href="https://cursos.agenciawebradar.com" target="_blank" class="project-url">cursos.agenciawebradar.com ↗</a>
           </div>
         </div>
 
         <div class="project-card reveal" data-category="shopify">
           <div class="project-img-wrap">
-            <div class="project-placeholder">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-            </div>
-            <div class="project-overlay">
-              <a href="https://proluxcon.com" target="_blank" class="project-link">Visitar →</a>
-            </div>
+            <img class="project-thumb" src="https://image.thum.io/get/width/600/crop/380/noanimate/https://proluxcon.com" alt="Prolux Construction" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+            <div class="project-placeholder" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+            <div class="project-overlay"><a href="https://proluxcon.com" target="_blank" class="project-link" data-i18n="projects.visit">Visitar →</a></div>
           </div>
           <div class="project-info">
             <div class="project-cat">Shopify · Construcción</div>
             <h3>Prolux Construction</h3>
-            <p>Sitio corporativo para empresa constructora con portafolio de proyectos, galería y formularios de cotización.</p>
+            <p data-i18n="proj.prolux">Sitio corporativo para empresa constructora con portafolio de proyectos y formularios de cotización.</p>
             <a href="https://proluxcon.com" target="_blank" class="project-url">proluxcon.com ↗</a>
           </div>
         </div>
 
-        <div class="project-card reveal" data-category="shopify">
+        <!-- WIX -->
+        <div class="project-card reveal" data-category="wix">
           <div class="project-img-wrap">
-            <div class="project-placeholder">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-            </div>
-            <div class="project-overlay">
-              <a href="https://aionexp.com" target="_blank" class="project-link">Visitar →</a>
-            </div>
+            <img class="project-thumb" src="https://image.thum.io/get/width/600/crop/380/noanimate/https://cecilianails.com" alt="Cecilia Nails" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+            <div class="project-placeholder" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+            <div class="project-overlay"><a href="https://cecilianails.com" target="_blank" class="project-link" data-i18n="projects.visit">Visitar →</a></div>
           </div>
           <div class="project-info">
-            <div class="project-cat">Wix · Entretenimiento</div>
-            <h3>Aion Experience</h3>
-            <p>Shows de drones en el Caribe. Sitio impactante para cotizar espectáculos con diseño orientado a conversión.</p>
-            <a href="https://aionexp.com" target="_blank" class="project-url">aionexp.com ↗</a>
+            <div class="project-cat">Wix · Beauty</div>
+            <h3>Cecilia Nails</h3>
+            <p data-i18n="proj.cecilia">Presencia online para nail artist con integración a redes sociales y links de contacto directo.</p>
+            <a href="https://cecilianails.com" target="_blank" class="project-url">cecilianails.com ↗</a>
           </div>
         </div>
 
-        <div class="project-card reveal" data-category="shopify">
+        <div class="project-card reveal" data-category="wix">
           <div class="project-img-wrap">
-            <div class="project-placeholder">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-            </div>
-            <div class="project-overlay">
-              <a href="https://ekarder.com" target="_blank" class="project-link">Visitar →</a>
-            </div>
+            <img class="project-thumb" src="https://image.thum.io/get/width/600/crop/380/noanimate/https://ekarder.com" alt="Ekarder" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+            <div class="project-placeholder" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+            <div class="project-overlay"><a href="https://ekarder.com" target="_blank" class="project-link" data-i18n="projects.visit">Visitar →</a></div>
           </div>
           <div class="project-info">
             <div class="project-cat">Wix · Landscaping</div>
             <h3>Ekarder</h3>
-            <p>Empresa de paisajismo con diseño profesional, galería de servicios y estrategia SEO local para captar clientes.</p>
+            <p data-i18n="proj.ekarder">Empresa de paisajismo con galería de servicios y estrategia SEO local para captar clientes.</p>
             <a href="https://ekarder.com" target="_blank" class="project-url">ekarder.com ↗</a>
           </div>
         </div>
@@ -451,25 +429,24 @@
   <!-- CONTACT -->
   <section class="contact" id="contact">
     <div class="container">
-      <div class="section-label reveal">Contacto</div>
+      <div class="section-label reveal" data-i18n="contact.label">Contacto</div>
       <div class="contact-grid">
         <div class="contact-left reveal">
-          <h2 class="section-title">¿Listo para<br/><span class="accent-text">crecer online?</span></h2>
-          <p>Trabajemos juntos en tu próximo proyecto. Ya sea un nuevo sitio web, una campaña SEO o una tienda online, estoy listo para ayudarte.</p>
+          <h2 class="section-title">
+            <span data-i18n="contact.title1">¿Listo para</span><br/>
+            <span class="accent-text" data-i18n="contact.title2">crecer online?</span>
+          </h2>
+          <p data-i18n="contact.desc">Trabajemos juntos en tu próximo proyecto. Ya sea un nuevo sitio web, una campaña SEO o una tienda online, estoy listo para ayudarte.</p>
           <div class="contact-items">
             <a href="tel:+584141796454" class="contact-item">
-              <div class="contact-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.6 1H6.6a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              </div>
+              <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.6 1H6.6a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
               <div>
-                <div class="contact-label">Teléfono</div>
+                <div class="contact-label" data-i18n="contact.phone">Teléfono</div>
                 <div class="contact-value">+58 414 1796454</div>
               </div>
             </a>
             <a href="mailto:davidbocaranda21@gmail.com" class="contact-item">
-              <div class="contact-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              </div>
+              <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
               <div>
                 <div class="contact-label">Email</div>
                 <div class="contact-value">davidbocaranda21@gmail.com</div>
@@ -480,36 +457,35 @@
         <div class="contact-right reveal">
           <form class="contact-form" id="contact-form">
             <div class="form-group">
-              <label>Nombre</label>
-              <input type="text" placeholder="Tu nombre completo" required />
+              <label data-i18n="form.name">Nombre</label>
+              <input type="text" data-i18n-ph="form.namePh" placeholder="Tu nombre completo" required />
             </div>
             <div class="form-group">
               <label>Email</label>
               <input type="email" placeholder="tu@email.com" required />
             </div>
             <div class="form-group">
-              <label>Servicio</label>
+              <label data-i18n="form.service">Servicio</label>
               <select>
-                <option value="">¿Qué necesitas?</option>
-                <option>Sitio web WordPress</option>
+                <option value="" data-i18n="form.serviceDefault">¿Qué necesitas?</option>
+                <option data-i18n="form.opt1">Sitio web WordPress</option>
                 <option>SEO Optimization</option>
-                <option>Tienda Online</option>
-                <option>Mantenimiento</option>
-                <option>Otro</option>
+                <option data-i18n="form.opt3">Tienda Online</option>
+                <option data-i18n="form.opt4">Mantenimiento</option>
+                <option data-i18n="form.opt5">Otro</option>
               </select>
             </div>
             <div class="form-group">
-              <label>Mensaje</label>
-              <textarea placeholder="Cuéntame sobre tu proyecto..." rows="4" required></textarea>
+              <label data-i18n="form.message">Mensaje</label>
+              <textarea data-i18n-ph="form.messagePh" placeholder="Cuéntame sobre tu proyecto..." rows="4" required></textarea>
             </div>
-            <button type="submit" class="btn-primary full-width">Enviar Mensaje →</button>
+            <button type="submit" class="btn-primary full-width" data-i18n="form.submit">Enviar Mensaje →</button>
           </form>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
@@ -517,7 +493,7 @@
         <p>© 2025 David Bocaranda — WordPress Dev & SEO Specialist</p>
         <div class="footer-links">
           <a href="mailto:davidbocaranda21@gmail.com">Email</a>
-          <a href="tel:+584141796454">Teléfono</a>
+          <a href="tel:+584141796454" data-i18n="contact.phone">Teléfono</a>
         </div>
       </div>
     </div>
