@@ -20,6 +20,7 @@
     <div class="nav-logo">DB<span class="dot">.</span></div>
     <ul class="nav-links">
       <li><a href="#about" data-i18n="nav.about">Sobre mí</a></li>
+      <li><a href="#stack" data-i18n="nav.stack">Stack</a></li>
       <li><a href="#services" data-i18n="nav.services">Servicios</a></li>
       <li><a href="#process" data-i18n="nav.process">Proceso</a></li>
       <li><a href="#projects" data-i18n="nav.projects">Proyectos</a></li>
@@ -38,6 +39,7 @@
   <div class="mobile-menu" id="mobile-menu">
     <ul>
       <li><a href="#about" data-i18n="nav.about" onclick="closeMobile()">Sobre mí</a></li>
+      <li><a href="#stack" data-i18n="nav.stack" onclick="closeMobile()">Stack</a></li>
       <li><a href="#services" data-i18n="nav.services" onclick="closeMobile()">Servicios</a></li>
       <li><a href="#process" data-i18n="nav.process" onclick="closeMobile()">Proceso</a></li>
       <li><a href="#projects" data-i18n="nav.projects" onclick="closeMobile()">Proyectos</a></li>
@@ -127,26 +129,55 @@
       <div class="section-label reveal" data-i18n="about.label">Sobre mí</div>
       <div class="about-grid">
         <div class="about-left reveal">
-          <h2 class="section-title">WordPress Dev<br/><span class="accent-text">& SEO Specialist</span></h2>
-          <p data-i18n="about.p1">Especialista en crear sitios web profesionales con WordPress, Wix y Shopify. Aplico técnicas de SEO on-page y off-page comprobadas para posicionar sitios en Google y atraer tráfico orgánico real.</p>
-          <p data-i18n="about.p2">Desde 2022 he trabajado en agencias y de forma independiente, ayudando a negocios a crecer en el mundo digital mediante estrategias integrales de desarrollo web y posicionamiento.</p>
+          <h2 class="section-title" data-i18n="about.title">Marketing Web Developer<br/><span class="accent-text">& SEO Specialist</span></h2>
+          <p data-i18n="about.p1">Desarrollador web con 3+ años de experiencia construyendo landing pages de alto rendimiento y sitios web orientados a conversión. Especializado en ejecución pixel-perfect desde Figma, implementación de tracking con GA4 y Google Tag Manager, y optimización de performance con Lighthouse y Core Web Vitals.</p>
+          <p data-i18n="about.p2">Experiencia en entornos de marketing donde las páginas web son activos que generan ingresos. Enfoque en código limpio, mantenible y sistemas de componentes reutilizables que aumentan la velocidad del equipo.</p>
           <div class="experience-timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot active"></div>
+              <div class="timeline-content">
+                <div class="timeline-year">2025 — <span data-i18n="about.present">Presente</span></div>
+                <div class="timeline-role" data-i18n="about.role3">Marketing Web Developer</div>
+                <div class="timeline-company">Sting Agency</div>
+                <p data-i18n="about.role3desc">Landing pages responsive y pixel-perfect desde Figma. Implementación de GA4 via Google Tag Manager, optimización con Lighthouse y Core Web Vitals, y sistemas de componentes reutilizables para el equipo de marketing.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-year">2023 — <span data-i18n="about.present">Presente</span></div>
+                <div class="timeline-role" data-i18n="about.role2">Freelance Web Developer & SEO</div>
+                <div class="timeline-company" data-i18n="about.independent">Independiente</div>
+                <p data-i18n="about.role2desc">Sitios web orientados a conversión para e-commerce y generación de leads en EE. UU. y Latinoamérica. Tiendas con WooCommerce y Shopify, enfocadas en performance y posicionamiento orgánico.</p>
+              </div>
+            </div>
             <div class="timeline-item">
               <div class="timeline-dot"></div>
               <div class="timeline-content">
                 <div class="timeline-year">2022 — 2024</div>
                 <div class="timeline-role">SEO Specialist & Web Developer</div>
                 <div class="timeline-company">Radar Web Agency</div>
-                <p data-i18n="about.role1desc">Gestión de estrategias SEO: link building, optimización de Google My Business y SEO on/off-page. Diseño web para clientes.</p>
+                <p data-i18n="about.role1desc">Construcción y mantenimiento de sitios en WordPress, Wix y Shopify. SEO técnico, optimización de velocidad, estructura HTML semántica y compatibilidad cross-device.</p>
               </div>
             </div>
-            <div class="timeline-item">
-              <div class="timeline-dot active"></div>
-              <div class="timeline-content">
-                <div class="timeline-year">2024 — <span data-i18n="about.present">Presente</span></div>
-                <div class="timeline-role">Freelance SEO Specialist & Web Designer</div>
-                <div class="timeline-company" data-i18n="about.independent">Independiente</div>
-                <p data-i18n="about.role2desc">Ayudo a negocios a mejorar su visibilidad online con SEO efectivo y sitios WordPress a medida que aumentan el tráfico y conversiones.</p>
+          </div>
+          <div class="education-row reveal">
+            <div class="edu-item">
+              <div class="edu-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              </div>
+              <div>
+                <div class="edu-degree" data-i18n="about.edu1degree">Full Stack Developer</div>
+                <div class="edu-school">FUNVAL · 2022–2023</div>
+              </div>
+            </div>
+            <div class="edu-item">
+              <div class="edu-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              </div>
+              <div>
+                <div class="edu-degree" data-i18n="about.edu2degree">Applied Technology</div>
+                <div class="edu-school">BYU – Ohio University · 2024–<span data-i18n="about.present">Presente</span></div>
               </div>
             </div>
           </div>
@@ -183,6 +214,200 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- STACK / SKILLS -->
+  <section class="stack-section" id="stack">
+    <div class="container">
+      <div class="section-label reveal" data-i18n="stack.label">Tech Stack</div>
+      <h2 class="section-title reveal"><span data-i18n="stack.titleFull">Frontend <span class="accent-text">& más</span></span></h2>
+      <p class="stack-intro reveal" data-i18n="stack.intro">Mi enfoque principal es el desarrollo frontend y la experiencia de usuario, complementado con conocimientos de backend y herramientas SEO que me permiten entregar proyectos completos de inicio a fin.</p>
+
+      <div class="stack-categories">
+
+        <!-- FRONTEND -->
+        <div class="stack-category reveal">
+          <div class="stack-cat-header">
+            <div class="stack-cat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <div>
+              <div class="stack-cat-label" data-i18n="stack.frontendLabel">Principal</div>
+              <h3 data-i18n="stack.frontendTitle">Frontend</h3>
+            </div>
+            <div class="stack-cat-badge">★</div>
+          </div>
+          <div class="stack-items">
+            <div class="stack-item">
+              <div class="stack-item-top">
+                <span class="stack-name">HTML5</span>
+                <span class="stack-level expert" data-i18n="level.expert">Experto</span>
+              </div>
+              <div class="stack-bar"><div class="stack-bar-fill" style="--w:96%"></div></div>
+            </div>
+            <div class="stack-item">
+              <div class="stack-item-top">
+                <span class="stack-name">CSS3 / Flexbox / Grid</span>
+                <span class="stack-level expert" data-i18n="level.expert">Experto</span>
+              </div>
+              <div class="stack-bar"><div class="stack-bar-fill" style="--w:94%"></div></div>
+            </div>
+            <div class="stack-item">
+              <div class="stack-item-top">
+                <span class="stack-name">JavaScript (Vanilla)</span>
+                <span class="stack-level intermediate" data-i18n="level.intermediate">Intermedio</span>
+              </div>
+              <div class="stack-bar"><div class="stack-bar-fill" style="--w:68%"></div></div>
+            </div>
+            <div class="stack-item">
+              <div class="stack-item-top">
+                <span class="stack-name">Figma → Code (Pixel-perfect)</span>
+                <span class="stack-level advanced" data-i18n="level.advanced">Avanzado</span>
+              </div>
+              <div class="stack-bar"><div class="stack-bar-fill" style="--w:88%"></div></div>
+            </div>
+            <div class="stack-item">
+              <div class="stack-item-top">
+                <span class="stack-name">Lighthouse / Core Web Vitals</span>
+                <span class="stack-level advanced" data-i18n="level.advanced">Avanzado</span>
+              </div>
+              <div class="stack-bar"><div class="stack-bar-fill" style="--w:87%"></div></div>
+            </div>
+            <div class="stack-item">
+              <div class="stack-item-top">
+                <span class="stack-name">Cross-browser Testing</span>
+                <span class="stack-level advanced" data-i18n="level.advanced">Avanzado</span>
+              </div>
+              <div class="stack-bar"><div class="stack-bar-fill" style="--w:88%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CMS / PLATFORMS -->
+        <div class="stack-category reveal">
+          <div class="stack-cat-header">
+            <div class="stack-cat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            </div>
+            <div>
+              <div class="stack-cat-label">CMS</div>
+              <h3>CMS & Platforms</h3>
+            </div>
+            <div class="stack-cat-badge">★</div>
+          </div>
+          <div class="stack-items">
+            <div class="stack-item">
+              <div class="stack-item-top">
+                <span class="stack-name">WordPress / Elementor</span>
+                <span class="stack-level expert" data-i18n="level.expert">Experto</span>
+              </div>
+              <div class="stack-bar"><div class="stack-bar-fill" style="--w:95%"></div></div>
+            </div>
+            <div class="stack-item">
+              <div class="stack-item-top">
+                <span class="stack-name">WooCommerce</span>
+                <span class="stack-level advanced" data-i18n="level.advanced">Avanzado</span>
+              </div>
+              <div class="stack-bar"><div class="stack-bar-fill" style="--w:88%"></div></div>
+            </div>
+            <div class="stack-item">
+              <div class="stack-item-top">
+                <span class="stack-name">Shopify</span>
+                <span class="stack-level advanced" data-i18n="level.advanced">Avanzado</span>
+              </div>
+              <div class="stack-bar"><div class="stack-bar-fill" style="--w:85%"></div></div>
+            </div>
+            <div class="stack-item">
+              <div class="stack-item-top">
+                <span class="stack-name">Wix</span>
+                <span class="stack-level advanced" data-i18n="level.advanced">Avanzado</span>
+              </div>
+              <div class="stack-bar"><div class="stack-bar-fill" style="--w:82%"></div></div>
+            </div>
+            <div class="stack-item">
+              <div class="stack-item-top">
+                <span class="stack-name">Magento (CMS)</span>
+                <span class="stack-level intermediate" data-i18n="level.intermediate">Intermedio</span>
+              </div>
+              <div class="stack-bar"><div class="stack-bar-fill" style="--w:60%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SEO / ANALYTICS -->
+        <div class="stack-category reveal">
+          <div class="stack-cat-header">
+            <div class="stack-cat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <div>
+              <div class="stack-cat-label">SEO</div>
+              <h3>SEO & Analytics</h3>
+            </div>
+            <div class="stack-cat-badge">★</div>
+          </div>
+          <div class="stack-items">
+            <div class="stack-item">
+              <div class="stack-item-top">
+                <span class="stack-name">SEO On-Page</span>
+                <span class="stack-level expert" data-i18n="level.expert">Experto</span>
+              </div>
+              <div class="stack-bar"><div class="stack-bar-fill" style="--w:93%"></div></div>
+            </div>
+            <div class="stack-item">
+              <div class="stack-item-top">
+                <span class="stack-name">SEO Off-Page / Link Building</span>
+                <span class="stack-level advanced" data-i18n="level.advanced">Avanzado</span>
+              </div>
+              <div class="stack-bar"><div class="stack-bar-fill" style="--w:87%"></div></div>
+            </div>
+            <div class="stack-item">
+              <div class="stack-item-top">
+                <span class="stack-name">GA4 + Google Tag Manager</span>
+                <span class="stack-level advanced" data-i18n="level.advanced">Avanzado</span>
+              </div>
+              <div class="stack-bar"><div class="stack-bar-fill" style="--w:88%"></div></div>
+            </div>
+            <div class="stack-item">
+              <div class="stack-item-top">
+                <span class="stack-name">Google Search Console</span>
+                <span class="stack-level advanced" data-i18n="level.advanced">Avanzado</span>
+              </div>
+              <div class="stack-bar"><div class="stack-bar-fill" style="--w:90%"></div></div>
+            </div>
+            <div class="stack-item">
+              <div class="stack-item-top">
+                <span class="stack-name">SEMrush</span>
+                <span class="stack-level advanced" data-i18n="level.advanced">Avanzado</span>
+              </div>
+              <div class="stack-bar"><div class="stack-bar-fill" style="--w:88%"></div></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- SOFT SKILLS / TOOLS ROW -->
+      <div class="stack-chips-row reveal">
+        <div class="stack-chips-label" data-i18n="stack.alsoLabel">También trabajo con</div>
+        <div class="stack-chips">
+          <span class="chip">Git / GitHub</span>
+          <span class="chip">Google Tag Manager</span>
+          <span class="chip">Google My Business</span>
+          <span class="chip">Figma</span>
+          <span class="chip">Design Systems</span>
+          <span class="chip">Core Web Vitals</span>
+          <span class="chip">Landing Pages</span>
+          <span class="chip">UX / UI</span>
+          <span class="chip">Remote · ET Overlap</span>
+          <span class="chip">Español Nativo</span>
+          <span class="chip">English C1</span>
+          <span class="chip">FUNVAL Full Stack 2022–23</span>
+          <span class="chip">BYU – Ohio Univ. 2024–</span>
+        </div>
+      </div>
+
     </div>
   </section>
 

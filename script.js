@@ -75,6 +75,26 @@ const translations = {
     'form.messagePh': 'Cuéntame sobre tu proyecto...',
     'form.submit': 'Enviar Mensaje →',
     'form.success': '✓ ¡Mensaje enviado!',
+    'nav.stack': 'Stack',
+    'stack.label': 'Tech Stack',
+    'stack.titleFull': 'Frontend <span class="accent-text">& más</span>',
+    'stack.intro': 'Mi enfoque principal es el desarrollo frontend y la experiencia de usuario, complementado con conocimientos full-stack y herramientas SEO que me permiten entregar proyectos completos de inicio a fin.',
+    'stack.frontendLabel': 'Principal',
+    'stack.frontendTitle': 'Frontend',
+    'stack.alsoLabel': 'También trabajo con',
+    'level.expert': 'Experto',
+    'level.advanced': 'Avanzado',
+    'level.intermediate': 'Intermedio',
+    'about.title': 'Marketing Web Developer<br/><span class="accent-text">& SEO Specialist</span>',
+    'about.p1': 'Desarrollador web con 3+ años de experiencia construyendo landing pages de alto rendimiento y sitios orientados a conversión. Especializado en ejecución pixel-perfect desde Figma, tracking con GA4 y Google Tag Manager, y optimización con Lighthouse y Core Web Vitals.',
+    'about.p2': 'Experiencia en entornos de marketing donde las páginas web son activos que generan ingresos. Enfoque en código limpio, mantenible y sistemas de componentes reutilizables.',
+    'about.role3': 'Marketing Web Developer',
+    'about.role3desc': 'Landing pages responsive y pixel-perfect desde Figma. Implementación de GA4 via Google Tag Manager, optimización con Lighthouse y Core Web Vitals, y sistemas de componentes reutilizables para el equipo de marketing.',
+    'about.role2': 'Freelance Web Developer & SEO',
+    'about.role2desc': 'Sitios web orientados a conversión para e-commerce y generación de leads en EE. UU. y Latinoamérica. Tiendas con WooCommerce y Shopify, enfocadas en performance y posicionamiento orgánico.',
+    'about.role1desc': 'Construcción y mantenimiento de sitios en WordPress, Wix y Shopify. SEO técnico, velocidad de carga, HTML semántico y compatibilidad cross-device.',
+    'about.edu1degree': 'Full Stack Developer',
+    'about.edu2degree': 'Applied Technology',
   },
   en: {
     'nav.about': 'About',
@@ -149,6 +169,26 @@ const translations = {
     'form.messagePh': 'Tell me about your project...',
     'form.submit': 'Send Message →',
     'form.success': '✓ Message sent!',
+    'nav.stack': 'Stack',
+    'stack.label': 'Tech Stack',
+    'stack.titleFull': 'Frontend <span class="accent-text">& beyond</span>',
+    'stack.intro': 'My main focus is frontend development and user experience, complemented by full-stack knowledge and SEO tools that let me deliver complete projects from start to finish.',
+    'stack.frontendLabel': 'Core',
+    'stack.frontendTitle': 'Frontend',
+    'stack.alsoLabel': 'Also work with',
+    'level.expert': 'Expert',
+    'level.advanced': 'Advanced',
+    'level.intermediate': 'Intermediate',
+    'about.title': 'Marketing Web Developer<br/><span class="accent-text">& SEO Specialist</span>',
+    'about.p1': 'Web developer with 3+ years of experience building high-performance landing pages and conversion-focused websites. Specialized in pixel-perfect execution from Figma, marketing tracking via GA4 and Google Tag Manager, and performance optimization with Lighthouse and Core Web Vitals.',
+    'about.p2': 'Experienced in fast-paced marketing environments where web pages are revenue-driving assets. Focus on clean, maintainable code and reusable component systems that increase marketing team velocity.',
+    'about.role3': 'Marketing Web Developer',
+    'about.role3desc': 'Responsive, pixel-perfect landing pages from Figma. GA4 tracking via Google Tag Manager, Lighthouse and Core Web Vitals optimization, and reusable component systems for the marketing team.',
+    'about.role2': 'Freelance Web Developer & SEO',
+    'about.role2desc': 'Conversion-focused websites for ecommerce and lead generation clients in the U.S. and Latin America. WooCommerce and Shopify stores focused on performance and organic search rankings.',
+    'about.role1desc': 'Built and maintained client sites on WordPress, Wix, and Shopify. Technical SEO, page speed optimization, semantic HTML, and cross-device compatibility.',
+    'about.edu1degree': 'Full Stack Developer',
+    'about.edu2degree': 'Applied Technology',
   }
 };
 
@@ -261,7 +301,7 @@ revealEls.forEach((el, i) => {
 });
 
 // ===========================
-// SKILL BARS
+// SKILL BARS (about section)
 // ===========================
 const skillBars = document.querySelectorAll('.skill-bar-fill');
 const skillObserver = new IntersectionObserver((entries) => {
@@ -273,6 +313,20 @@ const skillObserver = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.3 });
 skillBars.forEach(bar => skillObserver.observe(bar));
+
+// ===========================
+// STACK BARS (stack section)
+// ===========================
+const stackBars = document.querySelectorAll('.stack-bar-fill');
+const stackBarObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('animated');
+      stackBarObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.3 });
+stackBars.forEach(bar => stackBarObserver.observe(bar));
 
 // ===========================
 // COUNT UP
