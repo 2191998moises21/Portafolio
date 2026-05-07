@@ -105,7 +105,6 @@ ul { list-style: none; }
 }
 .nav-links .nav-cta:hover { background: var(--accent-dim); transform: translateY(-1px); }
 
-/* Language Toggle */
 .lang-toggle {
   font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.1em;
   text-transform: uppercase; color: var(--text-muted);
@@ -136,7 +135,7 @@ ul { list-style: none; }
 .mobile-menu a:hover { color: var(--accent); }
 
 /* ===========================
-   HERO — fixed card overlap
+   HERO — AURORA BACKGROUND
    =========================== */
 .hero {
   min-height: 100vh;
@@ -149,17 +148,67 @@ ul { list-style: none; }
   max-width: 1400px;
   margin: 0 auto;
 }
-.hero-bg-grid {
+
+/* Aurora blobs */
+.hero-aurora {
   position: fixed; inset: 0;
-  background-image:
-    linear-gradient(rgba(200,255,0,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(200,255,0,0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
-  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black, transparent);
   pointer-events: none; z-index: 0;
+  overflow: hidden;
 }
+.aurora-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0;
+  animation: auroraFade 1.2s ease forwards;
+}
+.aurora-blob-1 {
+  width: 600px; height: 500px;
+  background: radial-gradient(ellipse, rgba(200,255,0,0.12) 0%, transparent 70%);
+  top: -10%; left: -5%;
+  animation-delay: 0.1s;
+  animation: auroraFade 1.2s ease 0.1s forwards, auroraFloat1 14s ease-in-out 1.3s infinite;
+}
+.aurora-blob-2 {
+  width: 500px; height: 450px;
+  background: radial-gradient(ellipse, rgba(100,200,50,0.08) 0%, transparent 70%);
+  top: 30%; right: -8%;
+  animation: auroraFade 1.2s ease 0.3s forwards, auroraFloat2 18s ease-in-out 1.5s infinite;
+}
+.aurora-blob-3 {
+  width: 400px; height: 380px;
+  background: radial-gradient(ellipse, rgba(200,255,0,0.07) 0%, transparent 70%);
+  bottom: 5%; left: 25%;
+  animation: auroraFade 1.2s ease 0.5s forwards, auroraFloat3 12s ease-in-out 1.7s infinite;
+}
+.aurora-blob-4 {
+  width: 350px; height: 320px;
+  background: radial-gradient(ellipse, rgba(160,255,60,0.06) 0%, transparent 70%);
+  top: 10%; right: 30%;
+  animation: auroraFade 1.2s ease 0.7s forwards, auroraFloat2 20s ease-in-out 1.9s infinite reverse;
+}
+
+@keyframes auroraFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes auroraFloat1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(40px, 30px) scale(1.05); }
+  66%       { transform: translate(-20px, 50px) scale(0.97); }
+}
+@keyframes auroraFloat2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  40%       { transform: translate(-50px, -30px) scale(1.08); }
+  70%       { transform: translate(30px, 20px) scale(0.95); }
+}
+@keyframes auroraFloat3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%       { transform: translate(25px, -40px) scale(1.1); }
+}
+
 .hero-noise {
-  position: absolute; inset: 0; pointer-events: none; opacity: 0.4; z-index: 0;
+  position: absolute; inset: 0; pointer-events: none; opacity: 0.3; z-index: 0;
   background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
 }
 .hero-content { position: relative; z-index: 1; min-width: 0; }
@@ -282,6 +331,8 @@ ul { list-style: none; }
 .edu-icon svg { width: 16px; height: 16px; color: var(--accent); }
 .edu-degree { font-family: var(--font-display); font-weight: 700; font-size: 0.88rem; }
 .edu-school { font-size: 0.75rem; color: var(--text-dim); font-family: var(--font-mono); margin-top: 0.1rem; }
+
+/* Skills card */
 .skills-card { background: var(--bg-card); border: 1px solid var(--border-light); border-radius: var(--radius); padding: 2rem; }
 .skills-card h3 { font-family: var(--font-display); font-weight: 700; font-size: 1rem; margin-bottom: 1.8rem; }
 .skill-bar-list { display: flex; flex-direction: column; gap: 1.2rem; }
@@ -292,13 +343,104 @@ ul { list-style: none; }
 .skill-bar-fill.animated { width: var(--w); }
 
 /* ===========================
+   PROFILE PHOTO
+   =========================== */
+.profile-photo-wrap {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+.profile-photo-inner {
+  position: relative;
+  width: 100%;
+  max-width: 280px;
+  animation: photoFloat 6s ease-in-out infinite;
+}
+@keyframes photoFloat {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+.profile-photo {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 16px;
+  border: 1px solid var(--border-light);
+  display: block;
+  position: relative;
+  z-index: 1;
+  filter: grayscale(8%) contrast(1.04);
+}
+/* Accent glow behind the image */
+.profile-photo-glow {
+  position: absolute;
+  inset: -2px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, var(--accent) 0%, transparent 60%);
+  opacity: 0.18;
+  z-index: 0;
+  filter: blur(8px);
+  animation: glowPulse 4s ease-in-out infinite;
+}
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.18; transform: scale(1); }
+  50%       { opacity: 0.28; transform: scale(1.02); }
+}
+/* Corner accent line */
+.profile-photo-inner::before {
+  content: '';
+  position: absolute;
+  top: -6px; left: -6px;
+  width: 40px; height: 40px;
+  border-top: 2px solid var(--accent);
+  border-left: 2px solid var(--accent);
+  border-radius: 4px;
+  z-index: 2;
+}
+.profile-photo-inner::after {
+  content: '';
+  position: absolute;
+  bottom: -6px; right: -6px;
+  width: 40px; height: 40px;
+  border-bottom: 2px solid var(--accent);
+  border-right: 2px solid var(--accent);
+  border-radius: 4px;
+  z-index: 2;
+}
+/* Available badge on the photo */
+.profile-photo-badge {
+  position: absolute;
+  bottom: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: var(--bg-card-2);
+  border: 1px solid var(--border-light);
+  padding: 0.35rem 0.85rem;
+  border-radius: 100px;
+  white-space: nowrap;
+  z-index: 3;
+}
+
+/* ===========================
    STACK / SKILLS SECTION
    =========================== */
 .stack-section { padding: 7rem 0; }
 .stack-intro { color: var(--text-muted); max-width: 640px; margin-bottom: 3.5rem; font-size: 1rem; line-height: 1.75; }
 
+/* 2x2 grid for 4 categories */
 .stack-categories {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
   margin-bottom: 2.5rem;
 }
 .stack-category {
@@ -340,7 +482,6 @@ ul { list-style: none; }
 }
 
 .stack-items { display: flex; flex-direction: column; gap: 1.1rem; }
-.stack-item {}
 .stack-item-top {
   display: flex; justify-content: space-between; align-items: center;
   margin-bottom: 0.45rem;
@@ -426,7 +567,6 @@ ul { list-style: none; }
 .project-card:hover { border-color: rgba(200,255,0,0.3); transform: translateY(-4px); }
 .project-card.hidden { display: none; }
 
-/* THUMBNAIL */
 .project-img-wrap { position: relative; aspect-ratio: 16/9; overflow: hidden; background: var(--bg-card-2); }
 .project-thumb { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; transition: transform 0.5s ease; }
 .project-card:hover .project-thumb { transform: scale(1.04); }
@@ -499,10 +639,16 @@ ul { list-style: none; }
   .nav-links { display: none; }
   .nav-right-mobile { display: flex; }
   .hamburger { display: flex; }
+  .profile-photo-wrap { justify-content: center; }
+  .profile-photo-inner { max-width: 240px; }
+}
+@media (max-width: 768px) {
+  .stack-categories { grid-template-columns: 1fr; }
 }
 @media (max-width: 640px) {
   .projects-grid { grid-template-columns: 1fr; }
   .process-steps { grid-template-columns: 1fr; }
   .hero-stats { gap: 1.5rem; }
   .footer-content { flex-direction: column; text-align: center; }
+  .profile-photo-inner { max-width: 200px; }
 }
